@@ -1,0 +1,238 @@
+/* Add this to your global or main CSS file */
+.wrapper {
+  max-width: 100vw;
+  margin: 0 auto;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  box-sizing: border-box;
+}
+
+.cart-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  border: 1px solid #F4F3E9;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  width: 600px;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  z-index: 100000000;
+}
+
+@media (max-width: 650px) {
+
+  #popup-footer {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .schedule-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content */
+    margin-bottom: 15px;
+  }
+
+  #schedule-food {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+  }
+
+  .schedule-input {
+    width: 100px; /* Make inputs smaller */
+    margin-bottom: 10px; /* Add spacing between inputs */
+  }
+
+  .cart-total {
+    transform: scaleY(1);
+    width: 75%;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: #000;
+    padding: 10px;
+    text-align: center; /* Center the total text */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+
+  }
+
+  .cart-total-wrapper {
+    display: flex;
+    justify-content: center; !important/* Center the cart total within the wrapper */
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.cart-total {
+  justify-content: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: #000;
+  padding: 10px;
+  text-align: right;
+  display: flex;
+}
+
+.close-popup {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: #555;
+}
+
+.cart-header {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 40px;
+  margin-left: 30xp;
+  color: #333;
+}
+
+.cart-items {
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 15px 0;
+  padding: 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.cart-item-content {
+  flex: 1;
+  display: flex; /* Added display flex for alignment */
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 15px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: row; /* Align items horizontally */
+  justify-content: space-between; /* Space title and price apart */
+  align-items: center; /* Vertically align items */
+  width: 100%;
+}
+
+.item-info h3,
+.item-info .price {
+  font-family: "Poppins", sans-serif;
+}
+
+.item-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.item-info .price {
+  color: blue;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.cart-item-img-right {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 15px;
+}
+
+
+
+#popup-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.schedule-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#schedule-food {
+  display: flex;
+  align-items: center;
+}
+
+.schedule-label,
+.schedule-input {
+  margin-right: 10px;
+}
+
+.schedule-input {
+  width: 120px;
+}
+
+#orderButton {
+  background-color: #0066CC;
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s ease;
+  width: 250px;
+}
+
+#orderButton:hover {
+  background-color: #004999;
+}
+
+p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+  font-family: "Poppins", sans-serif;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker black with transparency */
+  z-index: 99999; /* Ensure it's behind the cart popup */
+}
+
+.remove-from-cart {
+  margin-top: 10px;
+  background-color: #ff4d4f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 8px 12px; /* Reduced padding */
+  width: auto; /* Automatically size to content */
+  color: #fff;
+  transition: background-color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  align-self: flex-start; /* Positions the button to the left */
+}
+
+.remove-from-cart:hover {
+  background-color: #cc3c3e;
+}
