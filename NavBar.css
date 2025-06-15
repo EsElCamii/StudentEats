@@ -1,0 +1,174 @@
+.navbar {
+  width: 100%;
+  padding: 2vh 40px;
+  background-color: #F4F3E9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left nav,
+.navbar-right nav {
+  display: flex;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.navbar-menu li {
+  margin-right: 20px;
+}
+
+.navbar-menu li:last-child {
+  margin-right: 0;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden; /* Ensure container hides overflow */
+}
+
+.logo-container {
+  display: inline-block; /* Make sure the container is inline-block */
+  overflow: hidden; /* Hide overflow during animation */
+  height: 50px;
+}
+
+.logo {
+  height: 100%;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo.spin {
+  animation: spin 0.5s ease;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar-menu li a {
+  color: #000;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  padding: 10px 20px;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+}
+
+.navbar-menu li a:hover {
+  text-decoration: underline;
+}
+
+#carritoButton {
+  padding: 5px 17px;
+  background-color: rgb(0, 0, 215);
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s, border-color 0.7s;
+  border: 3px solid transparent;
+  height: 20px; /* Ensures button consistency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes bounceAnimation {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+#carritoButton.bounce {
+  animation: bounceAnimation 0.8s ease;
+}
+
+#carritoButton:hover {
+  background-color: white;
+  color: #000000;
+  border-color: rgb(255, 0, 100);
+}
+
+@media (max-width: 650px) {
+  .navbar {
+   padding:  1vh 20px;
+  }
+
+  #specialPlate-button {
+    display: none;
+  }
+
+  .navbar-menu {
+    justify-content: center; /* Aligns menu items in the center */
+  }
+
+  .navbar-center {
+    display: none; /* Hide the logo */
+  }
+
+  .navbar-left, .navbar-right {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .navbar-menu li {
+    display: flex;
+    justify-content: center; /* Center the menu items */
+    margin-right: 0; /* Remove right margin to prevent crowding */
+  }
+}
+
+@media (max-width: 650px) {
+  .cart-popup {
+    width: 80%; /* Adjust width to prevent overflow */
+    max-width: 90%; /* Ensure it fits within smaller screens */
+    padding: 15px; /* Maintain a reasonable padding */
+    box-sizing: border-box; /* Include padding in width calculations */
+  }
+}
+
+@media (max-width: 430px) {
+  .navbar-menu li a {
+    padding: 5px 10px; /* Reduce padding for smaller screens */
+  }
+}
