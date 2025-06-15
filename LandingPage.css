@@ -1,0 +1,70 @@
+main {
+  margin-top: 70px;
+  position: relative;
+  height: 90vh;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://static.wixstatic.com/media/9cd508_3c5be2f5ab884970b77fa3b7994817a0~mv2.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.front-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #FFF;
+  text-align: left;
+  z-index: 1;
+  font-family: Helvetica, sans-serif;
+}
+
+.front-content h1 {
+  margin-bottom: 0;
+  font-size: 100px;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+
+.front-content h2 {
+  margin-top: 0;
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+}
+
+#pideAhora {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 650px) {
+  main {
+    height: 80vh; /* Adjust height for smaller screens */
+  }
+
+  .front-content {
+    bottom: auto;  /* Remove the fixed bottom value */
+    top: 50%;      /* Position the text from the top */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the content */
+    text-align: center; /* Center align text */
+  }
+
+  .front-content h1 {
+    font-size: 50px; /* Adjust font size for smaller screens */
+  }
+
+  .front-content h2 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+}
